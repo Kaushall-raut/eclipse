@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  background-size: 100% 100%;
+  background-image: url("./images/bright.jpg");
+  place-content: center;
+  animation: bg 10s ease-in-out 2s infinite;
+}
+@keyframes bg {
+  50% {
+    background-image: url("./images/night1.jpg");
+  }
+}
+.sun {
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 3px 2px 40px 16px rgba(237, 147, 73, 0.87);
+  &::before {
+    content: "";
+    position: absolute;
+    aspect-ratio: 1;
+    width: 200px;
+    background-color: black;
+    border-radius: 50%;
+    top: 0;
+    right: 0px;
+    animation: eclispe 10s ease-in-out 2s infinite;
+  }
+}
+@keyframes eclispe {
+  0% {
+    translate: 100%;
+    scale: 1;
+  }
+  50% {
+    translate: 0%;
+    scale: 0.96;
+  }
+  100% {
+    translate: -100%;
+    scale: 0.9;
+  }
+}
